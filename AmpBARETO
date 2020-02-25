@@ -1,0 +1,18 @@
+  $(document).ready(main);
+      var cond = 1;
+      function main() {    document.getElementsByTagName("body")[0].style.visibility = "visible";
+        $('ul').find('li:has(ul)').children('a').removeAttr('href');
+        $('li:has(ul)').click(function() {
+          $(this).children('ul').slideToggle();
+        });
+        $('.bt-menu').click(function() {
+          $('.header-nav ul').slideToggle();
+        });
+    var menu = jQuery('.header-nav');    
+        jQuery(window).on('resize', function() {     
+          if(!jQuery(".menu-bar").is(":visible") && !menu.is(':visible'))
+          {
+            menu.css({'display':''});   
+          }
+        });  
+      }
